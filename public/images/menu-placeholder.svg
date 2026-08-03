@@ -1,0 +1,21 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" rx="40" fill="#FFF8F0"/>
+  <rect width="1200" height="900" rx="40" fill="url(#paint0_linear)"/>
+  <circle cx="920" cy="180" r="180" fill="#F39C12" fill-opacity="0.18"/>
+  <circle cx="220" cy="760" r="220" fill="#C0392B" fill-opacity="0.14"/>
+  <circle cx="600" cy="450" r="180" fill="white" fill-opacity="0.92"/>
+  <circle cx="600" cy="450" r="126" fill="#FFF2E2"/>
+  <circle cx="600" cy="450" r="120" stroke="#C0392B" stroke-opacity="0.16" stroke-width="12"/>
+  <path d="M535 397C556 378 581 369 611 369C648 369 682 383 705 410C727 437 735 469 729 504C723 537 705 563 673 582C638 603 595 610 548 600C522 594 496 582 470 563" stroke="#C0392B" stroke-width="18" stroke-linecap="round"/>
+  <circle cx="528" cy="362" r="18" fill="#F39C12"/>
+  <circle cx="603" cy="333" r="18" fill="#C0392B"/>
+  <circle cx="681" cy="362" r="18" fill="#F39C12"/>
+  <text x="600" y="700" text-anchor="middle" fill="#1A1A1A" font-family="Georgia, serif" font-size="64" font-weight="700">Feast Lane</text>
+  <text x="600" y="758" text-anchor="middle" fill="#7C5A49" font-family="Segoe UI, sans-serif" font-size="30" letter-spacing="6">PREMIUM MULTI-CUISINE</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="88" y1="48" x2="1118" y2="855" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFDF8"/>
+      <stop offset="1" stop-color="#FDE8D0"/>
+    </linearGradient>
+  </defs>
+</svg>
