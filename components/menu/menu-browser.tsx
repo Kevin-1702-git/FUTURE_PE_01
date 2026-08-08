@@ -77,9 +77,9 @@ export function MenuBrowser() {
         </div>
       </div>
 
-      <div className="grid gap-4">
+      <div className="flex flex-col divide-y divide-stone-100 dark:divide-stone-800">
         {filtered.slice(0, 30).map((item) => (
-          <div key={item.id} className="flex">
+          <div key={item.id} className="py-3">
             <MenuCard item={item} compact />
           </div>
         ))}
