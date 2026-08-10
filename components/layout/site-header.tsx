@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Menu, Phone, ShoppingBag } from "lucide-react";
 
@@ -10,9 +11,20 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-white/40 bg-brand-background/80 backdrop-blur-xl dark:border-white/10 dark:bg-brand-dark/80">
       <div className="section-shell flex items-center justify-between gap-4 py-4">
         <div className="flex items-center gap-3">
-          <div className="flex h-11 w-11 items-center justify-center rounded-full bg-brand-primary text-lg font-bold text-white">
-            FL
-          </div>
+          <Link
+            href="/"
+            className="relative block h-11 w-11 shrink-0 overflow-hidden rounded-full ring-1 ring-brand-primary/15 sm:h-12 sm:w-12"
+            aria-label="Feast Lane home"
+          >
+            <Image
+              src="/images/branding/feast-lane-logo.png"
+              alt="Feast Lane logo"
+              fill
+              sizes="(max-width: 640px) 44px, 48px"
+              className="object-cover"
+              priority
+            />
+          </Link>
           <div>
             <Link href="/" className="font-heading text-2xl font-semibold">
               Feast Lane

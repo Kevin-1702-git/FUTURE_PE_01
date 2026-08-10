@@ -5,6 +5,10 @@ const specPath = path.join(process.cwd(), "feast-lane-website-spec.md");
 const outputTsPath = path.join(process.cwd(), "lib", "data", "menu-items.ts");
 const outputJsonPath = path.join(process.cwd(), "prisma", "menu-items.json");
 const outputSqlPath = path.join(process.cwd(), "prisma", "seed.sql");
+const imageCsvPath = path.join(process.cwd(), "food_images.csv");
+const sourceImagesDir = path.join(process.cwd(), "food_images");
+const publicImagesDir = path.join(process.cwd(), "public", "images");
+const fallbackImage = "/images/menu-placeholder.svg";
 
 const markdown = fs.readFileSync(specPath, "utf8");
 const lines = markdown.split(/\r?\n/);
@@ -16,6 +20,69 @@ const slugify = (value) =>
     .replace(/&/g, "and")
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "");
+
+function parseCsvLine(line) {
+  const cells = [];
+  let current = "";
+  let inQuotes = false;
+
+  for (let index = 0; index < line.length; index += 1) {
+    const character = line[index];
+
+    if (character === '"') {
+      const isEscapedQuote = inQuotes && line[index + 1] === '"';
+
+      if (isEscapedQuote) {
+        current += '"';
+        index += 1;
+      } else {
+        inQuotes = !inQuotes;
+      }
+    } else if (character === "," && !inQuotes) {
+      cells.push(current);
+      current = "";
+    } else {
+      current += character;
+    }
+  }
+
+  cells.push(current);
+  return cells;
+}
+
+function loadImageManifest() {
+  const csv = fs.readFileSync(imageCsvPath, "utf8");
+  const [header, ...dataLines] = csv.split(/\r?\n/).filter(Boolean);
+  const columns = parseCsvLine(header);
+  const records = new Map();
+
+  for (const line of dataLines) {
+    const values = parseCsvLine(line);
+    const record = Object.fromEntries(columns.map((column, index) => [column, values[index] ?? ""]));
+    const key = `${record.name}||${record.category}`;
+    records.set(key, record);
+  }
+
+  return records;
+}
+
+function copyDirectory(sourceDir, destinationDir) {
+  fs.mkdirSync(destinationDir, { recursive: true });
+
+  for (const entry of fs.readdirSync(sourceDir, { withFileTypes: true })) {
+    const sourcePath = path.join(sourceDir, entry.name);
+    const destinationPath = path.join(destinationDir, entry.name);
+
+    if (entry.isDirectory()) {
+      copyDirectory(sourcePath, destinationPath);
+    } else if (entry.isFile()) {
+      fs.copyFileSync(sourcePath, destinationPath);
+    }
+  }
+}
+
+const imageManifest = loadImageManifest();
+copyDirectory(sourceImagesDir, publicImagesDir);
 
 const cuisineMap = {
   Appetizers: "Global",
@@ -170,7 +237,10 @@ const items = rows.slice(1).map((line, index) => {
   const calories = base + ((index % 7) * 17 + (type === "Non-Veg" ? 45 : 0));
   const prepMinutes = prep + (index % 4) * 3;
   const slug = slugify(name);
-  const image = "/images/menu-placeholder.svg";
+  const imageRecord = imageManifest.get(`${name}||${category}`);
+  const imageFile = imageRecord?.status === "downloaded" ? imageRecord.filename.replace(/\\/g, "/") : "";
+  const imageFilePath = imageFile ? path.join(sourceImagesDir, ...imageFile.split("/")) : "";
+  const image = imageFile && fs.existsSync(imageFilePath) ? `/images/${imageFile}` : fallbackImage;
 
   return {
     id: `FL-${String(index + 1).padStart(3, "0")}`,
@@ -216,4 +286,12 @@ const sqlRows = items
 const sqlFile = `INSERT INTO "MenuItem" ("id","slug","name","description","categoryLabel","cuisine","price","type","calories","preparationTime","image","available","rating","spiceLevel","featured","bestSeller","todaysSpecial") VALUES\n${sqlRows};\n`;
 
 fs.writeFileSync(outputSqlPath, sqlFile);
+
+const mappedImages = items.filter((item) => item.image !== fallbackImage).length;
+const fallbackItems = items.filter((item) => item.image === fallbackImage).map((item) => item.name);
+
 console.log(`Generated ${items.length} menu items.`);
+console.log(`Mapped ${mappedImages} items to food images in /public/images.`);
+if (fallbackItems.length > 0) {
+  console.log(`Fallback image retained for: ${fallbackItems.join(", ")}`);
+}
