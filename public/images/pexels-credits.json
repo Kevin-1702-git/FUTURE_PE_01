@@ -1,0 +1,518 @@
+{
+  "/images/party-packs/grand-event-mixed-pack.jpg": {
+    "photographer": "Evelyn Hale",
+    "photographer_url": "https://www.pexels.com/@evelyn-hale-218648335",
+    "pexels_url": "https://www.pexels.com/photo/selective-focus-shot-of-charcuterie-boards-and-other-food-items-11893745/",
+    "photo_id": 11893745
+  },
+  "/images/appetizers/crispy-chilli-baby-corn.jpg": {
+    "photographer": "Kunal Lakhotia",
+    "photographer_url": "https://www.pexels.com/@kunal-lakhotia-781256899",
+    "pexels_url": "https://www.pexels.com/photo/spicy-indo-chinese-gobi-manchurian-dish-28674543/",
+    "photo_id": 28674543
+  },
+  "/images/appetizers/tandoori-mushroom-bites.jpg": {
+    "photographer": "Mouktik Joshi",
+    "photographer_url": "https://www.pexels.com/@mouktik-joshi-98936055",
+    "pexels_url": "https://www.pexels.com/photo/chicken-grilled-on-charcoal-9646858/",
+    "photo_id": 9646858
+  },
+  "/images/appetizers/chicken-65-bites.jpg": {
+    "photographer": "Ali Dashti",
+    "photographer_url": "https://www.pexels.com/@ali-dashti-506667798",
+    "pexels_url": "https://www.pexels.com/photo/a-box-with-chicken-wings-and-dipping-sauce-27758756/",
+    "photo_id": 27758756
+  },
+  "/images/soups/creamy-mushroom-soup.jpg": {
+    "photographer": "Helena Monx",
+    "photographer_url": "https://www.pexels.com/@helena-monx-75707786",
+    "pexels_url": "https://www.pexels.com/photo/cooked-food-on-clear-glass-bowl-8580433/",
+    "photo_id": 8580433
+  },
+  "/images/soups/chicken-manchow-soup.jpg": {
+    "photographer": "aboodi vesakaran",
+    "photographer_url": "https://www.pexels.com/@aboodi",
+    "pexels_url": "https://www.pexels.com/photo/food-photography-18698265/",
+    "photo_id": 18698265
+  },
+  "/images/soups/lemon-coriander-soup.jpg": {
+    "photographer": "Nosh Caterers",
+    "photographer_url": "https://www.pexels.com/@nosh-caterers-2148640437",
+    "pexels_url": "https://www.pexels.com/photo/spicy-lamb-curry-with-fresh-ingredients-30203312/",
+    "photo_id": 30203312
+  },
+  "/images/salads/mediterranean-greek-salad.jpg": {
+    "photographer": "Farhad Ibrahimzade",
+    "photographer_url": "https://www.pexels.com/@farhad",
+    "pexels_url": "https://www.pexels.com/photo/vegetable-salad-on-ceramic-bowl-8697517/",
+    "photo_id": 8697517
+  },
+  "/images/salads/grilled-chicken-caesar-salad.jpg": {
+    "photographer": "Diego Romero",
+    "photographer_url": "https://www.pexels.com/@diego-romero-471613950",
+    "pexels_url": "https://www.pexels.com/photo/salad-with-bread-19087691/",
+    "photo_id": 19087691
+  },
+  "/images/salads/asian-sesame-crunch-salad.jpg": {
+    "photographer": "Kei Scampa",
+    "photographer_url": "https://www.pexels.com/@kei-scampa-1201427",
+    "pexels_url": "https://www.pexels.com/photo/mix-of-healthy-fresh-vegetables-and-shrimps-in-bowl-5514819/",
+    "photo_id": 5514819
+  },
+  "/images/pizza/farmhouse-garden-pizza.jpg": {
+    "photographer": "Pranjall Kumar",
+    "photographer_url": "https://www.pexels.com/@pranjall-kumar-150768",
+    "pexels_url": "https://www.pexels.com/photo/close-up-shot-of-yummy-pizzas-8609973/",
+    "photo_id": 8609973
+  },
+  "/images/pizza/spicy-paneer-tikka-pizza.jpg": {
+    "photographer": "Pranjall Kumar",
+    "photographer_url": "https://www.pexels.com/@pranjall-kumar-150768",
+    "pexels_url": "https://www.pexels.com/photo/close-up-shot-of-yummy-pizzas-8609973/",
+    "photo_id": 8609973
+  },
+  "/images/burgers/smoky-bbq-paneer-burger.jpg": {
+    "photographer": "Manish M",
+    "photographer_url": "https://www.pexels.com/@manish-m-2148639571",
+    "pexels_url": "https://www.pexels.com/photo/classic-cheeseburger-with-fresh-lettuce-32807693/",
+    "photo_id": 32807693
+  },
+  "/images/burgers/double-cheese-beef-burger.jpg": {
+    "photographer": "ᗩᑎᑌᑭKᑌᗰᎪᏒ PATEL",
+    "photographer_url": "https://www.pexels.com/@k-patel-1100389468",
+    "pexels_url": "https://www.pexels.com/photo/fork-and-knife-around-cheeseburger-with-meat-20722047/",
+    "photo_id": 20722047
+  },
+  "/images/sandwiches/grilled-chicken-club-sandwich.jpg": {
+    "photographer": "ᗩᑎᑌᑭKᑌᗰᎪᏒ PATEL",
+    "photographer_url": "https://www.pexels.com/@k-patel-1100389468",
+    "pexels_url": "https://www.pexels.com/photo/a-burger-on-a-table-20722043/",
+    "photo_id": 20722043
+  },
+  "/images/sandwiches/peri-peri-chicken-sandwich.jpg": {
+    "photographer": "Farhad Ibrahimzade",
+    "photographer_url": "https://www.pexels.com/@farhad",
+    "pexels_url": "https://www.pexels.com/photo/brown-bread-on-the-plate-5446513/",
+    "photo_id": 5446513
+  },
+  "/images/pasta/creamy-alfredo-chicken-pasta.jpg": {
+    "photographer": "The_a DoTe",
+    "photographer_url": "https://www.pexels.com/@the_a-dote-2055473880",
+    "pexels_url": "https://www.pexels.com/photo/creamy-chicken-and-gnocchi-dish-on-white-plate-37540181/",
+    "photo_id": 37540181
+  },
+  "/images/pasta/pesto-basil-pasta.jpg": {
+    "photographer": "David Gierth",
+    "photographer_url": "https://www.pexels.com/@davidgierth",
+    "pexels_url": "https://www.pexels.com/photo/close-up-shot-of-pasta-on-a-white-plate-3807044/",
+    "photo_id": 3807044
+  },
+  "/images/italian/lasagna-al-forno.jpg": {
+    "photographer": "Nano Erdozain",
+    "photographer_url": "https://www.pexels.com/@nano-erdozain-120534369",
+    "pexels_url": "https://www.pexels.com/photo/delicious-rigatoni-pasta-in-tomato-sauce-29039066/",
+    "photo_id": 29039066
+  },
+  "/images/italian/risotto-primavera.jpg": {
+    "photographer": "David Gierth",
+    "photographer_url": "https://www.pexels.com/@davidgierth",
+    "pexels_url": "https://www.pexels.com/photo/close-up-shot-of-pasta-on-a-white-plate-3807044/",
+    "photo_id": 3807044
+  },
+  "/images/italian/bruschetta-pomodoro.jpg": {
+    "photographer": "David Gierth",
+    "photographer_url": "https://www.pexels.com/@davidgierth",
+    "pexels_url": "https://www.pexels.com/photo/close-up-shot-of-baked-food-on-a-white-plate-3807054/",
+    "photo_id": 3807054
+  },
+  "/images/chinese/kung-pao-chicken.jpg": {
+    "photographer": "Kunal Lakhotia",
+    "photographer_url": "https://www.pexels.com/@kunal-lakhotia-781256899",
+    "pexels_url": "https://www.pexels.com/photo/delicious-indo-chinese-chicken-manchurian-dish-29631426/",
+    "photo_id": 29631426
+  },
+  "/images/chinese/vegetable-manchurian.jpg": {
+    "photographer": "Kunal Lakhotia",
+    "photographer_url": "https://www.pexels.com/@kunal-lakhotia-781256899",
+    "pexels_url": "https://www.pexels.com/photo/delicious-indo-chinese-cuisine-manchurian-dish-29631489/",
+    "photo_id": 29631489
+  },
+  "/images/japanese/chicken-katsu-don.jpg": {
+    "photographer": "Markus Winkler",
+    "photographer_url": "https://www.pexels.com/@markus-winkler-1430818",
+    "pexels_url": "https://www.pexels.com/photo/a-bowl-of-curry-with-rice-and-a-fried-egg-18405156/",
+    "photo_id": 18405156
+  },
+  "/images/japanese/spicy-tuna-sushi-roll.jpg": {
+    "photographer": "Farhad Ibrahimzade",
+    "photographer_url": "https://www.pexels.com/@farhad",
+    "pexels_url": "https://www.pexels.com/photo/a-plate-of-sushi-8743917/",
+    "photo_id": 8743917
+  },
+  "/images/japanese/vegetable-gyoza.jpg": {
+    "photographer": "Dylan Gómez Ilizaliturri",
+    "photographer_url": "https://www.pexels.com/@dylaniliza",
+    "pexels_url": "https://www.pexels.com/photo/delicious-dumplings-with-sauce-and-chopsticks-32292049/",
+    "photo_id": 32292049
+  },
+  "/images/mexican/chicken-burrito-bowl.jpg": {
+    "photographer": "Ali Dashti",
+    "photographer_url": "https://www.pexels.com/@ali-dashti-506667798",
+    "pexels_url": "https://www.pexels.com/photo/close-up-of-a-dish-with-chicken-26341209/",
+    "photo_id": 26341209
+  },
+  "/images/mexican/cheese-quesadilla.jpg": {
+    "photographer": "I Own My Food Art",
+    "photographer_url": "https://www.pexels.com/@i-own-my-food-art-76108785",
+    "pexels_url": "https://www.pexels.com/photo/food-on-white-ceramic-plate-9026623/",
+    "photo_id": 9026623
+  },
+  "/images/mexican/mexican-bean-tacos.jpg": {
+    "photographer": "Leonardo Aquino",
+    "photographer_url": "https://www.pexels.com/@leonardo-aquino-246345118",
+    "pexels_url": "https://www.pexels.com/photo/delicious-mexican-tacos-platter-in-mexico-city-28959271/",
+    "photo_id": 28959271
+  },
+  "/images/south-indian/chettinad-chicken.jpg": {
+    "photographer": "Kunal Lakhotia",
+    "photographer_url": "https://www.pexels.com/@kunal-lakhotia-781256899",
+    "pexels_url": "https://www.pexels.com/photo/spicy-indian-chicken-curry-in-brass-pan-29685076/",
+    "photo_id": 29685076
+  },
+  "/images/south-indian/kothu-parotta-chicken.jpg": {
+    "photographer": "Kunal Lakhotia",
+    "photographer_url": "https://www.pexels.com/@kunal-lakhotia-781256899",
+    "pexels_url": "https://www.pexels.com/photo/delicious-spicy-tandoori-chicken-biryani-bowl-29631417/",
+    "photo_id": 29631417
+  },
+  "/images/north-indian/amritsari-fish.jpg": {
+    "photographer": "aboodi vesakaran",
+    "photographer_url": "https://www.pexels.com/@aboodi",
+    "pexels_url": "https://www.pexels.com/photo/food-photography-18698241/",
+    "photo_id": 18698241
+  },
+  "/images/north-indian/kadai-paneer.jpg": {
+    "photographer": "Kunal Lakhotia",
+    "photographer_url": "https://www.pexels.com/@kunal-lakhotia-781256899",
+    "pexels_url": "https://www.pexels.com/photo/spicy-indian-curry-in-traditional-kadai-29684990/",
+    "photo_id": 29684990
+  },
+  "/images/seafood/kerala-fish-curry.jpg": {
+    "photographer": "jd garrett",
+    "photographer_url": "https://www.pexels.com/@jdgarrettdotcom",
+    "pexels_url": "https://www.pexels.com/photo/close-up-of-frozen-fish-14879230/",
+    "photo_id": 14879230
+  },
+  "/images/seafood/crispy-calamari.jpg": {
+    "photographer": "Arya Bajra",
+    "photographer_url": "https://www.pexels.com/@arya-bajra-283675810",
+    "pexels_url": "https://www.pexels.com/photo/crispy-fried-calamari-and-sauce-15801007/",
+    "photo_id": 15801007
+  },
+  "/images/grill-bbq/tandoori-chicken-platter.jpg": {
+    "photographer": "aboodi vesakaran",
+    "photographer_url": "https://www.pexels.com/@aboodi",
+    "pexels_url": "https://www.pexels.com/photo/food-photography-18698222/",
+    "photo_id": 18698222
+  },
+  "/images/grill-bbq/grilled-lamb-chops.jpg": {
+    "photographer": "Razane Adra",
+    "photographer_url": "https://www.pexels.com/@razaneadra",
+    "pexels_url": "https://www.pexels.com/photo/close-up-shot-of-delicious-grilled-meat-on-brown-ceramic-plate-13304044/",
+    "photo_id": 13304044
+  },
+  "/images/rice/schezwan-veg-fried-rice.jpg": {
+    "photographer": "Markus Winkler",
+    "photographer_url": "https://www.pexels.com/@markus-winkler-1430818",
+    "pexels_url": "https://www.pexels.com/photo/rice-on-plate-24334865/",
+    "photo_id": 24334865
+  },
+  "/images/bread/butter-garlic-naan.jpg": {
+    "photographer": "Nosh Caterers",
+    "photographer_url": "https://www.pexels.com/@nosh-caterers-2148640437",
+    "pexels_url": "https://www.pexels.com/photo/flavorful-garlic-naan-bread-close-up-30203311/",
+    "photo_id": 30203311
+  },
+  "/images/desserts/gulab-jamun-with-ice-cream.jpg": {
+    "photographer": "Ali Dashti",
+    "photographer_url": "https://www.pexels.com/@ali-dashti-506667798",
+    "pexels_url": "https://www.pexels.com/photo/top-view-of-a-dessert-26341215/",
+    "photo_id": 26341215
+  },
+  "/images/desserts/classic-tiramisu.jpg": {
+    "photographer": "Diego Romero",
+    "photographer_url": "https://www.pexels.com/@diego-romero-471613950",
+    "pexels_url": "https://www.pexels.com/photo/sweet-cake-on-plate-17558644/",
+    "photo_id": 17558644
+  },
+  "/images/desserts/new-york-cheesecake.jpg": {
+    "photographer": "Оксана",
+    "photographer_url": "https://www.pexels.com/@63701867",
+    "pexels_url": "https://www.pexels.com/photo/a-piece-of-cake-with-a-slice-of-strawberry-8147767/",
+    "photo_id": 8147767
+  },
+  "/images/ice-cream/belgian-chocolate-ice-cream.jpg": {
+    "photographer": "Patrick Bryan",
+    "photographer_url": "https://www.pexels.com/@patrick-bryan-2150373533",
+    "pexels_url": "https://www.pexels.com/photo/gourmet-dessert-with-ice-cream-and-raspberries-31815432/",
+    "photo_id": 31815432
+  },
+  "/images/ice-cream/mango-sorbet.jpg": {
+    "photographer": "Galileo Giglio",
+    "photographer_url": "https://www.pexels.com/@galileo-giglio-3680471",
+    "pexels_url": "https://www.pexels.com/photo/a-close-up-shot-of-a-scooped-ice-cream-5535554/",
+    "photo_id": 5535554
+  },
+  "/images/ice-cream/pistachio-gelato.jpg": {
+    "photographer": "Galileo Giglio",
+    "photographer_url": "https://www.pexels.com/@galileo-giglio-3680471",
+    "pexels_url": "https://www.pexels.com/photo/a-close-up-shot-of-a-scooped-ice-cream-5535556/",
+    "photo_id": 5535556
+  },
+  "/images/cakes/red-velvet-cake-slice.jpg": {
+    "photographer": "Sofia de la Torre",
+    "photographer_url": "https://www.pexels.com/@sofia-de-la-torre-879056",
+    "pexels_url": "https://www.pexels.com/photo/a-red-velvet-cake-with-blueberries-6363069/",
+    "photo_id": 6363069
+  },
+  "/images/cakes/black-forest-cake-slice.jpg": {
+    "photographer": "Pranjall Kumar",
+    "photographer_url": "https://www.pexels.com/@pranjall-kumar-150768",
+    "pexels_url": "https://www.pexels.com/photo/cakes-with-fruit-7381533/",
+    "photo_id": 7381533
+  },
+  "/images/cakes/lotus-biscoff-cheesecake.jpg": {
+    "photographer": "Ali Dashti",
+    "photographer_url": "https://www.pexels.com/@ali-dashti-506667798",
+    "pexels_url": "https://www.pexels.com/photo/woman-hand-over-cake-on-plate-24206902/",
+    "photo_id": 24206902
+  },
+  "/images/coffee/spanish-latte.jpg": {
+    "photographer": "Amirho3in tavkoli",
+    "photographer_url": "https://www.pexels.com/@amirho3intavkooli",
+    "pexels_url": "https://www.pexels.com/photo/a-foamy-drink-in-a-glass-topped-with-a-few-coffee-beans-19154599/",
+    "photo_id": 19154599
+  },
+  "/images/coffee/mocha-frappe.jpg": {
+    "photographer": "Diego Romero",
+    "photographer_url": "https://www.pexels.com/@diego-romero-471613950",
+    "pexels_url": "https://www.pexels.com/photo/sweet-shakes-in-glasses-17558646/",
+    "photo_id": 17558646
+  },
+  "/images/tea/peach-iced-tea.jpg": {
+    "photographer": "Kunal Lakhotia",
+    "photographer_url": "https://www.pexels.com/@kunal-lakhotia-781256899",
+    "pexels_url": "https://www.pexels.com/photo/refreshing-iced-tea-with-mint-garnish-37515893/",
+    "photo_id": 37515893
+  },
+  "/images/milkshakes/oreo-milkshake.jpg": {
+    "photographer": "Arya Bajra",
+    "photographer_url": "https://www.pexels.com/@arya-bajra-283675810",
+    "pexels_url": "https://www.pexels.com/photo/milk-cold-drink-with-cookie-and-croissant-15801003/",
+    "photo_id": 15801003
+  },
+  "/images/milkshakes/chocolate-hazelnut-shake.jpg": {
+    "photographer": "Anil  Sharma",
+    "photographer_url": "https://www.pexels.com/@shootsaga",
+    "pexels_url": "https://www.pexels.com/photo/delicious-cookies-and-cream-milkshake-on-table-30660270/",
+    "photo_id": 30660270
+  },
+  "/images/milkshakes/strawberry-cream-shake.jpg": {
+    "photographer": "Luke Barky",
+    "photographer_url": "https://www.pexels.com/@lukebarky",
+    "pexels_url": "https://www.pexels.com/photo/woman-holding-milk-shake-2885916/",
+    "photo_id": 2885916
+  },
+  "/images/smoothies/banana-peanut-butter-smoothie.jpg": {
+    "photographer": "Наталья Масик",
+    "photographer_url": "https://www.pexels.com/@39607043",
+    "pexels_url": "https://www.pexels.com/photo/cereal-and-bananas-in-bowl-7439731/",
+    "photo_id": 7439731
+  },
+  "/images/smoothies/tropical-mango-smoothie.jpg": {
+    "photographer": "N G",
+    "photographer_url": "https://www.pexels.com/@oceanofstars",
+    "pexels_url": "https://www.pexels.com/photo/delicious-smoothie-bowl-with-banana-and-granola-34122323/",
+    "photo_id": 34122323
+  },
+  "/images/fresh-juice/watermelon-mint-juice.jpg": {
+    "photographer": "seda güner",
+    "photographer_url": "https://www.pexels.com/@hangiseda",
+    "pexels_url": "https://www.pexels.com/photo/top-view-of-a-cocktail-and-a-book-on-a-wooden-table-14880085/",
+    "photo_id": 14880085
+  },
+  "/images/fresh-juice/pineapple-ginger-juice.jpg": {
+    "photographer": "Studio Naae",
+    "photographer_url": "https://www.pexels.com/@studio-naae-15863863",
+    "pexels_url": "https://www.pexels.com/photo/coffee-and-pineapples-15554360/",
+    "photo_id": 15554360
+  },
+  "/images/fresh-juice/pomegranate-fresh-juice.jpg": {
+    "photographer": "Mustafa Akın",
+    "photographer_url": "https://www.pexels.com/@msaimakin",
+    "pexels_url": "https://www.pexels.com/photo/fresh-pomegranate-seeds-and-juice-on-linen-34704679/",
+    "photo_id": 34704679
+  },
+  "/images/mocktails/blue-lagoon-mocktail.jpg": {
+    "photographer": "Ilyas Chabli",
+    "photographer_url": "https://www.pexels.com/@ilyas",
+    "pexels_url": "https://www.pexels.com/photo/clear-glass-mug-with-green-juice-10839495/",
+    "photo_id": 10839495
+  },
+  "/images/mocktails/strawberry-mojito-mocktail.jpg": {
+    "photographer": "Jesus Cabrera",
+    "photographer_url": "https://www.pexels.com/@jcabrera",
+    "pexels_url": "https://www.pexels.com/photo/red-drink-in-a-wine-glass-with-ice-cubes-and-strawberries-5041570/",
+    "photo_id": 5041570
+  },
+  "/images/mocktails/virgin-mango-mule.jpg": {
+    "photographer": "Leslie del Moral",
+    "photographer_url": "https://www.pexels.com/@leslie-del-moral-3183549",
+    "pexels_url": "https://www.pexels.com/photo/refreshing-cocktail-with-mint-and-ice-on-blue-background-34192811/",
+    "photo_id": 34192811
+  },
+  "/images/soft-drinks/peach-sparkling-soda.jpg": {
+    "photographer": "YIMING TANG",
+    "photographer_url": "https://www.pexels.com/@yiming-tang-145491639",
+    "pexels_url": "https://www.pexels.com/photo/red-soda-can-against-white-tiled-background-34405411/",
+    "photo_id": 34405411
+  },
+  "/images/soft-drinks/classic-root-beer.jpg": {
+    "photographer": "Jay Moon",
+    "photographer_url": "https://www.pexels.com/@jay-moon-2149536798",
+    "pexels_url": "https://www.pexels.com/photo/celebratory-toast-with-beer-bottles-at-gathering-37935977/",
+    "photo_id": 37935977
+  },
+  "/images/soft-drinks/lime-cola-cooler.jpg": {
+    "photographer": "Ilyas Chabli",
+    "photographer_url": "https://www.pexels.com/@ilyas",
+    "pexels_url": "https://www.pexels.com/photo/clear-glass-mug-with-green-juice-10839495/",
+    "photo_id": 10839495
+  },
+  "/images/kids-menu/mini-chicken-pasta.jpg": {
+    "photographer": "elif tekkaya",
+    "photographer_url": "https://www.pexels.com/@eliftekkaya",
+    "pexels_url": "https://www.pexels.com/photo/close-up-shot-of-pasta-dish-on-a-plate-10966592/",
+    "photo_id": 10966592
+  },
+  "/images/kids-menu/cheesy-chicken-nuggets.jpg": {
+    "photographer": "Ali Dashti",
+    "photographer_url": "https://www.pexels.com/@ali-dashti-506667798",
+    "pexels_url": "https://www.pexels.com/photo/fast-food-on-s-tray-20003226/",
+    "photo_id": 20003226
+  },
+  "/images/kids-menu/mini-pancake-stack.jpg": {
+    "photographer": "JJ Jordan",
+    "photographer_url": "https://www.pexels.com/@jj-jordan-44924743",
+    "pexels_url": "https://www.pexels.com/photo/pancakes-and-berries-on-a-fork-10593645/",
+    "photo_id": 10593645
+  },
+  "/images/family-combos/family-biryani-feast.jpg": {
+    "photographer": "Nosh Caterers",
+    "photographer_url": "https://www.pexels.com/@nosh-caterers-2148640437",
+    "pexels_url": "https://www.pexels.com/photo/delicious-grilled-chicken-biryani-platter-30203313/",
+    "photo_id": 30203313
+  },
+  "/images/family-combos/weekend-grill-combo.jpg": {
+    "photographer": "Thomas Fritscher",
+    "photographer_url": "https://www.pexels.com/@thomas-fritscher-1675366234",
+    "pexels_url": "https://www.pexels.com/photo/delicious-grilled-meat-and-vegetable-skewers-on-bbq-37198642/",
+    "photo_id": 37198642
+  },
+  "/images/family-combos/italian-family-dinner.jpg": {
+    "photographer": "Marcelo Verfe",
+    "photographer_url": "https://www.pexels.com/@marceloverfe",
+    "pexels_url": "https://www.pexels.com/photo/ingredients-for-pasta-and-different-kinds-of-pasta-on-the-table-16620746/",
+    "photo_id": 16620746
+  },
+  "/images/party-packs/chicken-starter-party-pack.jpg": {
+    "photographer": "Kunal Lakhotia",
+    "photographer_url": "https://www.pexels.com/@kunal-lakhotia-781256899",
+    "pexels_url": "https://www.pexels.com/photo/crispy-chicken-lollipops-with-spicy-dip-29631422/",
+    "photo_id": 29631422
+  },
+  "/images/party-packs/mixed-rice-party-pack.jpg": {
+    "photographer": "Ali Dashti",
+    "photographer_url": "https://www.pexels.com/@ali-dashti-506667798",
+    "pexels_url": "https://www.pexels.com/photo/meal-on-plate-17649396/",
+    "photo_id": 17649396
+  },
+  "/images/party-packs/dessert-celebration-box.jpg": {
+    "photographer": "Ali Dashti",
+    "photographer_url": "https://www.pexels.com/@ali-dashti-506667798",
+    "pexels_url": "https://www.pexels.com/photo/man-hands-holding-box-of-cookies-23025154/",
+    "photo_id": 23025154
+  },
+  "/images/parotta/malabar-layered-parotta.jpg": {
+    "photographer": "Gansham Ramchandani",
+    "photographer_url": "https://www.pexels.com/@gunshe",
+    "pexels_url": "https://www.pexels.com/photo/egg-indian-omelette-marinated-meat-and-soup-5127333/",
+    "photo_id": 5127333
+  },
+  "/images/parotta/chicken-kothu-parotta.jpg": {
+    "photographer": "Kunal Lakhotia",
+    "photographer_url": "https://www.pexels.com/@kunal-lakhotia-781256899",
+    "pexels_url": "https://www.pexels.com/photo/delicious-spicy-tandoori-chicken-biryani-bowl-29631417/",
+    "photo_id": 29631417
+  },
+  "/images/parotta/ceylon-egg-parotta.jpg": {
+    "photographer": "J KREATOR",
+    "photographer_url": "https://www.pexels.com/@jkreat0r",
+    "pexels_url": "https://www.pexels.com/photo/three-fried-eggs-on-white-plate-overhead-view-32986480/",
+    "photo_id": 32986480
+  },
+  "/images/parotta/chilli-paneer-parotta-roll.jpg": {
+    "photographer": "Kunal Lakhotia",
+    "photographer_url": "https://www.pexels.com/@kunal-lakhotia-781256899",
+    "pexels_url": "https://www.pexels.com/photo/spicy-indo-chinese-chili-paneer-on-plate-29631468/",
+    "photo_id": 29631468
+  },
+  "/images/parotta/coin-parotta-with-salna.jpg": {
+    "photographer": "Gansham Ramchandani",
+    "photographer_url": "https://www.pexels.com/@gunshe",
+    "pexels_url": "https://www.pexels.com/photo/egg-indian-omelette-marinated-meat-and-soup-5127333/",
+    "photo_id": 5127333
+  },
+  "/images/parotta/mutton-chuka-stuffed-parotta.jpg": {
+    "photographer": "Kunal Lakhotia",
+    "photographer_url": "https://www.pexels.com/@kunal-lakhotia-781256899",
+    "pexels_url": "https://www.pexels.com/photo/authentic-indian-mutton-curry-in-traditional-pan-28674565/",
+    "photo_id": 28674565
+  },
+  "/images/biryani/hyderabadi-dum-chicken-biryani.jpg": {
+    "photographer": "Kunal Lakhotia",
+    "photographer_url": "https://www.pexels.com/@kunal-lakhotia-781256899",
+    "pexels_url": "https://www.pexels.com/photo/delicious-spicy-tandoori-chicken-biryani-bowl-29631417/",
+    "photo_id": 29631417
+  },
+  "/images/biryani/paneer-tikka-dum-biryani.jpg": {
+    "photographer": "Ali Dashti",
+    "photographer_url": "https://www.pexels.com/@ali-dashti-506667798",
+    "pexels_url": "https://www.pexels.com/photo/chicken-wings-in-rice-with-saffron-17696653/",
+    "photo_id": 17696653
+  },
+  "/images/north-indian/shahi-malai-kofta.jpg": {
+    "photographer": "Kunal Lakhotia",
+    "photographer_url": "https://www.pexels.com/@kunal-lakhotia-781256899",
+    "pexels_url": "https://www.pexels.com/photo/delicious-indian-butter-chicken-in-copper-pan-29685054/",
+    "photo_id": 29685054
+  },
+  "/images/north-indian/punjabi-dal-makhani-bowl.jpg": {
+    "photographer": "Nosh Caterers",
+    "photographer_url": "https://www.pexels.com/@nosh-caterers-2148640437",
+    "pexels_url": "https://www.pexels.com/photo/delicious-indian-dal-tadka-in-brass-bowl-30203314/",
+    "photo_id": 30203314
+  },
+  "/images/family-combos/royal-feast-family-combo.jpg": {
+    "photographer": "Nosh Caterers",
+    "photographer_url": "https://www.pexels.com/@nosh-caterers-2148640437",
+    "pexels_url": "https://www.pexels.com/photo/delicious-grilled-chicken-biryani-platter-30203313/",
+    "photo_id": 30203313
+  },
+  "/images/party-packs/ultimate-party-snack-pack.jpg": {
+    "photographer": "Yousif Idrees",
+    "photographer_url": "https://www.pexels.com/@yousif-idrees-867185224",
+    "pexels_url": "https://www.pexels.com/photo/top-view-of-a-plate-with-pastries-19846423/",
+    "photo_id": 19846423
+  }
+}

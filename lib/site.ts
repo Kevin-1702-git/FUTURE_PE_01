@@ -5,10 +5,10 @@ export const siteConfig = {
   description:
     "Premium multi-cuisine restaurant in Chennai for dine-in, online ordering, reservations, catering, and celebrations.",
   url: "https://feastlane.example.com",
-  ogImage: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80",
-  phone: "9876543210",
-  email: "feastlane@gmail.com",
-  address: "Chennai, Tamil Nadu",
+  ogImage: "/images/branding/feast-lane-logo.png",
+  phone: "+91 98765 43210",
+  email: "contact@feastlane.com",
+  address: "124 Grand Trunk Road, Anna Nagar, Chennai, Tamil Nadu 600040",
   hours: "11:00 AM - 11:30 PM",
   social: {
     instagram: "https://instagram.com/feastlane",
@@ -21,12 +21,11 @@ export const siteConfig = {
 export const navigation = [
   { href: "/", label: "Home" },
   { href: "/menu", label: "Menu" },
-  { href: "/services", label: "Services" },
-  { href: "/offers", label: "Offers" },
-  { href: "/reservations", label: "Reservations" },
-  { href: "/catering", label: "Catering" },
+  { href: "/cart", label: "Cart" },
+  { href: "/customer/orders", label: "My Orders" },
   { href: "/reviews", label: "Reviews" },
-  { href: "/contact", label: "Contact" }
+  { href: "/contact", label: "Contact" },
+  { href: "/catering", label: "Catering" }
 ];
 
 export const offers: Offer[] = [

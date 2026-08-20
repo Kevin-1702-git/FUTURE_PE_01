@@ -1,28 +1,50 @@
-import { menuItems } from "@/lib/data/menu-items";
+import { menuItems as localMenuItems } from "@/lib/data/menu-items";
+import { prisma } from "@/lib/prisma";
+import type { MenuItem } from "@/types";
 
-export function getAllMenuItems() {
-  return menuItems;
+export async function getAllMenuItems(): Promise<MenuItem[]> {
+  try {
+    const dbItems = await prisma.menuItem.findMany({
+      orderBy: { createdAt: "desc" }
+    });
+    if (dbItems && dbItems.length > 0) {
+      return dbItems.map((item) => ({
+        ...item,
+        category: item.categoryLabel || "General",
+        type: item.type === "Veg" ? "Veg" : "Non-Veg",
+        spiceLevel: (item.spiceLevel as any) || "Medium"
+      })) as any[];
+    }
+  } catch (e) {
+    console.warn("DB lookup error in menu-service, returning local items fallback:", e);
+  }
+  return localMenuItems;
 }
 
-export function getFeaturedItems(limit = 8) {
-  return menuItems.filter((item) => item.featured).slice(0, limit);
+export async function getFeaturedItems(limit = 8): Promise<MenuItem[]> {
+  const items = await getAllMenuItems();
+  return items.filter((item) => item.featured).slice(0, limit);
 }
 
-export function getBestSellers(limit = 8) {
-  return menuItems.filter((item) => item.bestSeller).slice(0, limit);
+export async function getBestSellers(limit = 8): Promise<MenuItem[]> {
+  const items = await getAllMenuItems();
+  return items.filter((item) => item.bestSeller).slice(0, limit);
 }
 
-export function getTodaysSpecials(limit = 8) {
-  return menuItems.filter((item) => item.todaysSpecial).slice(0, limit);
+export async function getTodaysSpecials(limit = 8): Promise<MenuItem[]> {
+  const items = await getAllMenuItems();
+  return items.filter((item) => item.todaysSpecial).slice(0, limit);
 }
 
-export function getPopularCategories(limit = 8) {
-  return [...new Set(menuItems.map((item) => item.category))].slice(0, limit);
+export async function getPopularCategories(limit = 8) {
+  const items = await getAllMenuItems();
+  return [...new Set(items.map((item) => item.category))].slice(0, limit);
 }
 
-export function getMenuFilters() {
+export async function getMenuFilters() {
+  const items = await getAllMenuItems();
   return {
-    categories: [...new Set(menuItems.map((item) => item.category))],
-    cuisines: [...new Set(menuItems.map((item) => item.cuisine))]
+    categories: [...new Set(items.map((item) => item.category))],
+    cuisines: [...new Set(items.map((item) => item.cuisine))]
   };
 }

@@ -1,4 +1,5 @@
 import { PrismaClient, Role, FoodType } from "@prisma/client";
+import bcrypt from "bcryptjs";
 import menuItems from "./menu-items.json";
 
 const prisma = new PrismaClient();
@@ -67,27 +68,52 @@ async function main() {
     });
   }
 
-  const passwordHash = "$2a$10$Ta2.RXeTQFzjH5Rj5shHpuQ1b9r8jvzXpG9Pb7xNL0Vhqo0Q5uY0a";
+  const restaurant = await prisma.restaurant.upsert({
+    where: { slug: "feast-lane-main" },
+    update: {},
+    create: {
+      id: "rest-feastlane-main",
+      name: "Feast Lane Main Branch",
+      slug: "feast-lane-main",
+      description: "Flagship multi-cuisine fine dining & delivery restaurant in Anna Nagar, Chennai",
+      address: "124 Grand Trunk Road, Anna Nagar, Chennai, TN 600040",
+      phone: "+91 98765 43210",
+      email: "contact@feastlane.com"
+    }
+  });
+
+  const adminPasswordHash = await bcrypt.hash("admin123", 10);
+  const customerPasswordHash = await bcrypt.hash("customer123", 10);
 
   await prisma.user.upsert({
     where: { email: "admin@feastlane.com" },
-    update: {},
+    update: {
+      passwordHash: adminPasswordHash,
+      role: Role.RESTAURANT_ADMIN,
+      restaurantId: restaurant.id
+    },
     create: {
       name: "Aman Admin",
       email: "admin@feastlane.com",
-      role: Role.ADMIN,
-      passwordHash
+      phone: "+91 98765 43210",
+      role: Role.RESTAURANT_ADMIN,
+      restaurantId: restaurant.id,
+      passwordHash: adminPasswordHash
     }
   });
 
   await prisma.user.upsert({
     where: { email: "customer@feastlane.com" },
-    update: {},
+    update: {
+      passwordHash: customerPasswordHash,
+      role: Role.CUSTOMER
+    },
     create: {
       name: "Riya Customer",
       email: "customer@feastlane.com",
+      phone: "+91 98765 12345",
       role: Role.CUSTOMER,
-      passwordHash
+      passwordHash: customerPasswordHash
     }
   });
 

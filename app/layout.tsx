@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 
 import "@/app/globals.css";
-import { AppToaster } from "@/components/ui/toaster";
-import { ThemeProvider } from "@/components/ui/theme-provider";
+import { Providers } from "@/components/providers";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -40,10 +39,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        <ThemeProvider>
-          {children}
-          <AppToaster />
-        </ThemeProvider>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

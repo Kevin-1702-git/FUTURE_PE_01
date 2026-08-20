@@ -7,8 +7,307 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model User {
+  id              String           @id @default(cuid())
+  name            String
+  email           String           @unique
+  phone           String?
+  passwordHash    String?
+  role            Role             @default(CUSTOMER)
+  avatar          String?
+  createdAt       DateTime         @default(now())
+  restaurantId    String?
+  restaurant      Restaurant?      @relation(fields: [restaurantId], references: [id], onDelete: SetNull)
+  addresses       Address[]
+  contactMessages ContactMessage[]
+  couponUsages    CouponUsage[]
+  employee        Employee?
+  notifications   Notification[]
+  orders          Order[]
+  partyOrders     PartyOrder[]
+  reservations    Reservation[]
+  reviews         Review[]
+  wishlistItems   Wishlist[]
+}
+
+model Address {
+  id         String   @id @default(cuid())
+  userId     String
+  label      String
+  line1      String
+  line2      String?
+  city       String
+  state      String
+  postalCode String
+  latitude   Float?
+  longitude  Float?
+  isDefault  Boolean  @default(false)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  orders     Order[]
+}
+
+model Category {
+  id          String     @id @default(cuid())
+  name        String     @unique
+  slug        String     @unique
+  description String?
+  image       String?
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  items       MenuItem[]
+}
+
+model MenuItem {
+  id              String      @id
+  slug            String      @unique
+  name            String
+  description     String
+  categoryId      String?
+  categoryLabel   String
+  cuisine         String
+  price           Int
+  type            FoodType
+  calories        Int
+  preparationTime Int
+  image           String
+  available       Boolean     @default(true)
+  rating          Float       @default(4.5)
+  spiceLevel      String
+  featured        Boolean     @default(false)
+  bestSeller      Boolean     @default(false)
+  todaysSpecial   Boolean     @default(false)
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+  inventoryItems  Inventory[]
+  category        Category?   @relation(fields: [categoryId], references: [id])
+  orderItems      OrderItem[]
+  reviews         Review[]
+  wishlistedBy    Wishlist[]
+}
+
+model Order {
+  id              String           @id @default(cuid())
+  userId          String
+  addressId       String?
+  status          OrderStatus      @default(PENDING)
+  subtotal        Int
+  deliveryCharge  Int
+  gst             Int
+  discount        Int              @default(0)
+  total           Int
+  paymentMethod   String
+  notes           String?
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+  contactMessages ContactMessage[]
+  address         Address?         @relation(fields: [addressId], references: [id])
+  user            User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  items           OrderItem[]
+  payment         Payment?
+  review          Review?
+}
+
+model OrderItem {
+  id         String   @id @default(cuid())
+  orderId    String
+  menuItemId String
+  quantity   Int
+  price      Int
+  total      Int
+  menuItem   MenuItem @relation(fields: [menuItemId], references: [id], onDelete: Cascade)
+  order      Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+}
+
+model Payment {
+  id                String        @id @default(cuid())
+  orderId           String        @unique
+  provider          String
+  providerOrderId   String?
+  providerPaymentId String?
+  status            PaymentStatus @default(PENDING)
+  amount            Int
+  transactionRef    String?
+  createdAt         DateTime      @default(now())
+  updatedAt         DateTime      @updatedAt
+  order             Order         @relation(fields: [orderId], references: [id], onDelete: Cascade)
+}
+
+model Reservation {
+  id              String            @id @default(cuid())
+  userId          String?
+  guestName       String
+  guestEmail      String
+  guestPhone      String
+  guestsCount     Int
+  reservationDate DateTime
+  specialRequests String?
+  status          ReservationStatus @default(PENDING)
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+  user            User?             @relation(fields: [userId], references: [id])
+}
+
+model PartyOrder {
+  id                 String   @id @default(cuid())
+  userId             String?
+  contactName        String?
+  contactEmail       String?
+  contactPhone       String?
+  eventType          String
+  guestCount         Int
+  eventDate          DateTime
+  budget             Int?
+  foodRequirements   String?
+  notes              String?
+  status             String   @default("PENDING")
+  quotation          Int?
+  restaurantResponse String?
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+  user               User?    @relation(fields: [userId], references: [id])
+}
+
+model Review {
+  id         String    @id @default(cuid())
+  userId     String
+  orderId    String?   @unique
+  menuItemId String?
+  rating     Int
+  title      String?
+  comment    String
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+  menuItem   MenuItem? @relation(fields: [menuItemId], references: [id])
+  order      Order?    @relation(fields: [orderId], references: [id])
+  user       User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model ContactMessage {
+  id        String    @id @default(cuid())
+  userId    String?
+  name      String
+  email     String
+  phone     String
+  subject   String?
+  message   String
+  orderId   String?
+  status    String    @default("UNREAD")
+  reply     String?
+  repliedAt DateTime?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  order     Order?    @relation(fields: [orderId], references: [id])
+  user      User?     @relation(fields: [userId], references: [id])
+}
+
+model Wishlist {
+  id         String   @id @default(cuid())
+  userId     String
+  menuItemId String
+  createdAt  DateTime @default(now())
+  menuItem   MenuItem @relation(fields: [menuItemId], references: [id], onDelete: Cascade)
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, menuItemId])
+}
+
+model Coupon {
+  id            String        @id @default(cuid())
+  code          String        @unique
+  title         String
+  description   String?
+  discountType  String
+  discountValue Int
+  minOrderValue Int?
+  maxDiscount   Int?
+  active        Boolean       @default(true)
+  expiresAt     DateTime?
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+  usages        CouponUsage[]
+}
+
+model CouponUsage {
+  id        String   @id @default(cuid())
+  couponId  String
+  userId    String
+  orderId   String?
+  createdAt DateTime @default(now())
+  coupon    Coupon   @relation(fields: [couponId], references: [id], onDelete: Cascade)
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Notification {
+  id        String   @id @default(cuid())
+  userId    String
+  title     String
+  message   String
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Employee {
+  id          String   @id @default(cuid())
+  userId      String   @unique
+  employeeId  String   @unique
+  designation String
+  shift       String
+  salary      Int?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Inventory {
+  id           String    @id @default(cuid())
+  menuItemId   String?
+  ingredient   String
+  stockUnit    String
+  stockLevel   Float
+  reorderLevel Float
+  supplier     String?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  menuItem     MenuItem? @relation(fields: [menuItemId], references: [id])
+}
+
+model Gallery {
+  id        String   @id @default(cuid())
+  title     String
+  image     String
+  category  String
+  featured  Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Offer {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  description String
+  badge       String?
+  code        String?
+  discount    String
+  active      Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Setting {
+  id        String   @id @default(cuid())
+  key       String   @unique
+  value     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
 enum Role {
   CUSTOMER
+  RESTAURANT_ADMIN
   ADMIN
   MANAGER
   STAFF
@@ -43,270 +342,16 @@ enum ReservationStatus {
   CANCELLED
 }
 
-model User {
-  id            String         @id @default(cuid())
-  name          String
-  email         String         @unique
-  phone         String?
-  passwordHash  String?
-  role          Role           @default(CUSTOMER)
-  avatar        String?
-  addresses     Address[]
-  orders        Order[]
-  reservations  Reservation[]
-  partyOrders   PartyOrder[]
-  reviews       Review[]
-  wishlistItems Wishlist[]
-  notifications Notification[]
-  couponUsages  CouponUsage[]
-  employee      Employee?
-  createdAt     DateTime       @default(now())
-  updatedAt     DateTime       @updatedAt
-}
-
-model Address {
-  id          String   @id @default(cuid())
-  userId      String
-  label       String
-  line1       String
-  line2       String?
-  city        String
-  state       String
-  postalCode  String
-  latitude    Float?
-  longitude   Float?
-  isDefault   Boolean  @default(false)
-  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  orders      Order[]
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-}
-
-model Category {
-  id          String     @id @default(cuid())
-  name        String     @unique
-  slug        String     @unique
-  description String?
-  image       String?
-  items       MenuItem[]
-  createdAt   DateTime   @default(now())
-  updatedAt   DateTime   @updatedAt
-}
-
-model MenuItem {
-  id               String      @id
-  slug             String      @unique
-  name             String
-  description      String
-  categoryId       String?
-  category         Category?   @relation(fields: [categoryId], references: [id], onDelete: SetNull)
-  categoryLabel    String
-  cuisine          String
-  price            Int
-  type             FoodType
-  calories         Int
-  preparationTime  Int
-  image            String
-  available        Boolean     @default(true)
-  rating           Float       @default(4.5)
-  spiceLevel       String
-  featured         Boolean     @default(false)
-  bestSeller       Boolean     @default(false)
-  todaysSpecial    Boolean     @default(false)
-  inventoryItems   Inventory[]
-  orderItems       OrderItem[]
-  reviews          Review[]
-  wishlistedBy     Wishlist[]
-  createdAt        DateTime    @default(now())
-  updatedAt        DateTime    @updatedAt
-}
-
-model Order {
-  id               String         @id @default(cuid())
-  userId           String
-  addressId        String?
-  status           OrderStatus    @default(PENDING)
-  subtotal         Int
-  deliveryCharge   Int
-  gst              Int
-  discount         Int            @default(0)
-  total            Int
-  paymentMethod    String
-  notes            String?
-  address          Address?       @relation(fields: [addressId], references: [id], onDelete: SetNull)
-  user             User           @relation(fields: [userId], references: [id], onDelete: Cascade)
-  items            OrderItem[]
-  payment          Payment?
-  createdAt        DateTime       @default(now())
-  updatedAt        DateTime       @updatedAt
-}
-
-model OrderItem {
-  id          String   @id @default(cuid())
-  orderId     String
-  menuItemId  String
-  quantity    Int
-  price       Int
-  total       Int
-  order       Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
-  menuItem    MenuItem @relation(fields: [menuItemId], references: [id], onDelete: Cascade)
-}
-
-model Payment {
-  id                String        @id @default(cuid())
-  orderId           String        @unique
-  provider          String
-  providerOrderId   String?
-  providerPaymentId String?
-  status            PaymentStatus @default(PENDING)
-  amount            Int
-  transactionRef    String?
-  order             Order         @relation(fields: [orderId], references: [id], onDelete: Cascade)
-  createdAt         DateTime      @default(now())
-  updatedAt         DateTime      @updatedAt
-}
-
-model Reservation {
-  id              String             @id @default(cuid())
-  userId          String?
-  guestName       String
-  guestEmail      String
-  guestPhone      String
-  guestsCount     Int
-  reservationDate DateTime
-  specialRequests String?
-  status          ReservationStatus  @default(PENDING)
-  user            User?              @relation(fields: [userId], references: [id], onDelete: SetNull)
-  createdAt       DateTime           @default(now())
-  updatedAt       DateTime           @updatedAt
-}
-
-model PartyOrder {
-  id              String   @id @default(cuid())
-  userId          String?
-  eventType       String
-  guestCount      Int
-  eventDate       DateTime
-  budget          Int?
-  notes           String?
-  status          String   @default("ENQUIRY")
-  user            User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
-}
-
-model Review {
-  id          String   @id @default(cuid())
-  userId      String
-  menuItemId  String?
-  rating      Int
-  title       String?
-  comment     String
-  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  menuItem    MenuItem? @relation(fields: [menuItemId], references: [id], onDelete: SetNull)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-}
-
-model Wishlist {
-  id          String   @id @default(cuid())
-  userId      String
-  menuItemId  String
-  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  menuItem    MenuItem @relation(fields: [menuItemId], references: [id], onDelete: Cascade)
-  createdAt   DateTime @default(now())
-
-  @@unique([userId, menuItemId])
-}
-
-model Coupon {
-  id            String        @id @default(cuid())
-  code          String        @unique
-  title         String
-  description   String?
-  discountType  String
-  discountValue Int
-  minOrderValue Int?
-  maxDiscount   Int?
-  active        Boolean       @default(true)
-  expiresAt     DateTime?
-  usages        CouponUsage[]
-  createdAt     DateTime      @default(now())
-  updatedAt     DateTime      @updatedAt
-}
-
-model CouponUsage {
-  id         String   @id @default(cuid())
-  couponId   String
-  userId     String
-  orderId    String?
-  coupon     Coupon   @relation(fields: [couponId], references: [id], onDelete: Cascade)
-  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  createdAt  DateTime @default(now())
-}
-
-model Notification {
-  id         String   @id @default(cuid())
-  userId     String
-  title      String
-  message    String
-  read       Boolean  @default(false)
-  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  createdAt  DateTime @default(now())
-}
-
-model Employee {
-  id          String   @id @default(cuid())
-  userId      String   @unique
-  employeeId  String   @unique
-  designation String
-  shift       String
-  salary      Int?
-  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-}
-
-model Inventory {
-  id           String   @id @default(cuid())
-  menuItemId   String?
-  ingredient   String
-  stockUnit    String
-  stockLevel   Float
-  reorderLevel Float
-  supplier     String?
-  menuItem     MenuItem? @relation(fields: [menuItemId], references: [id], onDelete: SetNull)
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
-}
-
-model Gallery {
-  id         String   @id @default(cuid())
-  title      String
-  image      String
-  category   String
-  featured   Boolean  @default(false)
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
-}
-
-model Offer {
-  id          String   @id @default(cuid())
-  title       String
-  slug        String   @unique
-  description String
-  badge       String?
-  code        String?
-  discount    String
-  active      Boolean  @default(true)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-}
-
-model Setting {
-  id          String   @id @default(cuid())
-  key         String   @unique
-  value       String
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+model Restaurant {
+  id              String           @id @default(cuid())
+  name            String
+  slug            String           @unique
+  description     String?
+  address         String
+  phone           String
+  email           String?
+  image           String?
+  users           User[]
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
 }

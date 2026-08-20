@@ -1,13 +1,16 @@
-export type UserRole = "CUSTOMER" | "ADMIN" | "MANAGER" | "STAFF";
+export type UserRole = "CUSTOMER" | "RESTAURANT_ADMIN" | "ADMIN" | "MANAGER" | "STAFF";
 
 export type FoodType = "Veg" | "Non-Veg";
-export type SpiceLevel = "Mild" | "Medium" | "Hot";
+export type SpiceLevel = "Mild" | "Medium" | "Hot" | "High";
 export type OrderStatus =
   | "PENDING"
   | "CONFIRMED"
+  | "ACCEPTED"
   | "PREPARING"
+  | "READY"
   | "OUT_FOR_DELIVERY"
   | "DELIVERED"
+  | "COMPLETED"
   | "CANCELLED";
 export type PaymentStatus = "PENDING" | "PAID" | "FAILED" | "REFUNDED";
 export type ReservationStatus = "PENDING" | "CONFIRMED" | "SEATED" | "COMPLETED" | "CANCELLED";
